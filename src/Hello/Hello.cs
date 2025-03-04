@@ -1,6 +1,9 @@
 ﻿namespace Hello;
 
-public class Class1
+public static class Hello
 {
-
+	public static string World()
+	{
+		return "Hello world!";
+	} 
 }
