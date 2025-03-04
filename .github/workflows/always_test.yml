@@ -1,4 +1,4 @@
-name: run tests
+name: test-every-push-to-every-branch
 
 on:
   workflow_dispatch:
@@ -6,7 +6,6 @@ on:
 
 env:
   CS_NUGET_TEMPLATE_DOTNET_VERSION: 8
-
 
 jobs:
 
