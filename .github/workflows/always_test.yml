@@ -15,5 +15,5 @@ jobs:
         with:
           dotnet-version: 8
 
-      - run: dotnet test -c Release
-      - run: dotnet test -c Debug
+      - run: dotnet test src -c Release
+      - run: dotnet test src -c Debug
