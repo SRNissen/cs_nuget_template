@@ -17,7 +17,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: $ {{ CS_NUGET_TEMPLATE_DOTNET_VERSION }}
+          dotnet-version: $ {{ env.CS_NUGET_TEMPLATE_DOTNET_VERSION }}
 
       - run: dotnet test src -c Release
       - run: dotnet test src -c Debug
