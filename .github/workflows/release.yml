@@ -18,6 +18,6 @@ jobs:
     needs: [test-before-release, find-version]
     
     steps:
-      - name: pack
-        run: echo "${{job.find-version.version.value}}"
-        #run: dotnet pack src -c Release -p:PackageVersion=${{job.find-version.version.value}}
+      - run: dotnet pack src \
+             -c Release \
+             -p:PackageVersion=${{needs.find-version.outputs.version}}
