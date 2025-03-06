@@ -7,7 +7,7 @@ on:
     outputs:
       version:
         description: "The release or pre-release version string"
-        value: ${{ jobs.find-version.outputs.snns_version }}
+        value: ${{ jobs.find-version.outputs.version }}
 ################################################################################
 
 jobs:
@@ -16,7 +16,7 @@ jobs:
   find-version:
     runs-on: ubuntu-latest
     outputs:
-      snns_version: ${{ steps.version_step.outputs.FullSemVer }}
+      version: ${{ steps.version_step.outputs.FullSemVer }}
 
     steps:
     ############################################################################
@@ -39,4 +39,4 @@ jobs:
 
     steps:
     ############################################################################
-      - run: echo ${{ job.find-version.outputs.snns_version }}
+      - run: echo ${{ job.find-version.outputs.version }}
