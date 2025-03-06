@@ -1,0 +1,22 @@
+name: prerelease
+
+on:
+  workflow_dispatch:
+  push:
+    branches: 'develop'
+
+jobs:
+
+  test-before-release:
+    uses: ./.github/workflows/always_test.yml
+
+  find-version:
+    uses: ./.github/workflows/version.yml
+
+  build:
+    runs-on: ubuntu-latest
+    needs: [test-before-release, find-version]
+    
+    steps:
+      - name: pack
+        run: dotnet pack src -c Release -p:PackageVersion=${{job.find-version.version.value}}

@@ -1,0 +1,29 @@
+name: version
+
+on:
+  workflow_dispatch:
+#  workflow_call:
+#    outputs:
+#      version:
+#        description: "The release or pre-release version string"
+#        value: ${{ jobs.find-version.outputs.version }}
+
+
+
+jobs:
+  find-version:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version_step.outputs.FullSemVer }}
+    steps:
+
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: gittools/actions/gitversion/setup@v3.1.11
+        with:
+          versionSpec: '6.0.x'
+
+      - id: version_step
+        uses: gittools/actions/gitversion/execute@v3.1.11
