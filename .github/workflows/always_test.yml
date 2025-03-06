@@ -1,6 +1,7 @@
 name: test-every-push-to-every-branch
 
 on:
+  workflow_call:
   workflow_dispatch:
   push:
 

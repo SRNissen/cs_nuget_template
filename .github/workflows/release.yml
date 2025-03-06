@@ -1,0 +1,13 @@
+name: prerelease
+
+on:
+  push:
+    branches: 'develop'
+
+jobs:
+  test-before-release:
+    uses: ./.github/workflows/always_test.yml
+
+  build:
+    runs-on: ubuntu-latest
+    needs: [test-before-release]
