@@ -1,4 +1,4 @@
-name: find-version
+name: version
 
 on:
   workflow_dispatch:
