@@ -2,11 +2,11 @@ name: version
 
 on:
   workflow_dispatch:
-  workflow_call:
-    outputs:
-      version:
-        description: "The release or pre-release version string"
-        value: ${{ jobs.find-version.outputs.version }}
+#  workflow_call:
+#    outputs:
+#      version:
+#        description: "The release or pre-release version string"
+#        value: ${{ jobs.find-version.outputs.version }}
 
 
 
