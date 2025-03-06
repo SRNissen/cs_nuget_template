@@ -8,7 +8,7 @@ on:
 jobs:
 
   test-before-release:
-    uses: ./.github/workflows/always_test.yml
+    uses: ./.github/workflows/test.yml
 
   find-version:
     uses: ./.github/workflows/version.yml
