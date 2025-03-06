@@ -1,7 +1,6 @@
 name: find-version
 
 on:
-  push:
   workflow_call:
   workflow_dispatch:
 
